@@ -1,0 +1,27 @@
+
+server:
+  port: 8080
+spring:
+  application:
+    name: druid-demo
+  datasource:
+    #driver-class-name: com.mysql.jdbc.Driver
+    # 填写你数据库的url、登录名、密码和数据库名
+    url: jdbc:mysql://127.0.0.1:3306/ezai?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT%2B8
+    username: root
+    password: dcx112233
+    #新型连接池选择
+    hikari:
+      #连接时间,单位毫秒
+      connection-timeout: 20000
+      #最小空闲连接数
+      minimum-idle: 5
+      #连接池大小
+      maximum-pool-size: 30
+      #空闲超时时间,单位毫秒
+      idle-timeout: 30000
+      #池中的连接保持最大时间,单位毫秒,0为无期限
+      max-lifetime: 1200000
+mybatis-plus:
+  mapper-locations: classpath:mapper/**/*.xml
+  type-aliases-package: com.example.mybatisgenerator.entity

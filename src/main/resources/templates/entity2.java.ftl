@@ -1,0 +1,1 @@
+abc=${cfg.abc}
